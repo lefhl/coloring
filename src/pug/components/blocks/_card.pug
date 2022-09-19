@@ -1,0 +1,7 @@
+mixin card(path, iconPath, name, role)
+  article.card&attributes(attributes)
+    .card__icon
+      img(src=`./images/${iconPath}`, alt="")
+    img(src=`./images/${path}`, alt="").card__author
+    h3.card__name= name
+    .card__role= role

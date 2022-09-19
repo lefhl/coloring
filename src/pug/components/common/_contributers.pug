@@ -1,0 +1,14 @@
+section.contributers
+  .wrapper
+    h2.contributers__title.observed(data-class="back-in-left") Над раскраской работали
+    .contributers__wrapper
+      .swiper
+        .swiper-wrapper.contributers__content
+          +card('author-1.webp', 'bulb.svg', 'Фрида Зелёная', 'авторка идеи').swiper-slide.observed(data-class="fade-in-up" style="--delay: 0s")
+          +card('author-2.webp', 'palette.svg', 'Пупс', 'иллюстраторка').swiper-slide.observed(data-class="fade-in-up" style="--delay: .2s")
+          +card('author-3.webp', 'scroll.svg', 'Семён Белугин', 'поэт').swiper-slide.observed(data-class="fade-in-up" style="--delay: .4s")
+          +card('author-4.webp', 'book.svg', 'Забытый Футурист', 'верстальщик').swiper-slide.observed(data-class="fade-in-up" style="--delay: 0s")
+          +card('author-5.webp', 'crown.svg', 'Марина Ястремская', 'худ. рук.').swiper-slide.observed(data-class="fade-in-up" style="--delay: .2s")
+        .swiper-pagination
+      span(aria-hidden="true" data-class="dash" style="--speed: 3s").contributers__spiral.observed
+        include ../../../images/spiral.svg

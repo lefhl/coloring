@@ -1,0 +1,253 @@
+.video {
+    --wrapper-width: 1056px;
+
+    position: relative;
+    background-size: cover;
+
+    &__inner {
+        padding-top: 280px;
+        padding-bottom: 524px;
+        overflow: hidden;
+    }
+
+    &__bg-wrapper {
+        position: absolute;
+        @include inset;
+        filter: drop-shadow(0px 0px 40px rgba(162, 81, 120, 0.5));
+    }
+
+    &__bg {
+        position: absolute;
+        @include inset;
+        background-color: var(--light-pink-color);
+        clip-path: url(#video-clip-path);
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__title {
+        margin-bottom: 64px;
+    }
+
+    &__player-wrapper {
+        max-width: var(--wrapper-width);
+        margin: 0 auto 23px;
+    }
+
+    &__player-inner {
+        position: relative;
+        padding-top: 56.25%;
+    }
+
+    &__player {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__horse-front {
+        position: absolute;
+        right: -270px;
+        top: -250px;
+
+        svg:last-child {
+            display: none;
+        }
+    }
+
+    &__horse-back {
+        position: absolute;
+        top: 50%;
+        left: 40px;
+        transform: translate(-100%, -50%);
+    }
+
+    &__description {
+        max-width: var(--wrapper-width);
+        margin: auto;
+    }
+
+    &__sun-image {
+        position: absolute;
+        left: -30px;
+        bottom: -64px;
+        transform: translateY(100%);
+
+        ellipse {
+            transition: opacity ease 0.43s 2s;
+        }
+
+        &.observed {
+            ellipse {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__cloud {
+        position: absolute;
+        right: 0;
+        top: 120%;
+
+        path:first-child {
+            transition: opacity ease 0.43s 4s;
+        }
+
+        &.observed {
+            path:first-child {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__heart {
+        position: absolute;
+        right: -170px;
+        bottom: 120px;
+
+        path:first-child {
+            transition: opacity ease 0.43s 2s;
+        }
+
+        &.observed {
+            path:first-child {
+                opacity: 0;
+            }
+        }
+    }
+
+    @include media(1500) {
+        &__horse-back {
+            display: none;
+        }
+
+        &__horse-front {
+            right: 100px;
+            top: -150px;
+
+            svg {
+                width: 250px;
+            }
+
+            svg:first-child {
+                display: none;
+            }
+
+            svg:last-child {
+                display: block;
+            }
+        }
+
+        &__heart {
+            right: 10px;
+            bottom: -90px;
+        }
+    }
+
+    @include media("lg") {
+        &__bg {
+            clip-path: url(#video-clip-path-mobile);
+        }
+
+        &__inner {
+            padding-top: 220px;
+            padding-bottom: 290px;
+            overflow: visible;
+            margin-bottom: 200px;
+        }
+    }
+
+    @include media("md") {
+        &__sun-image {
+            width: 90px;
+        }
+
+        &__heart {
+            width: 50px;
+        }
+
+        &__cloud {
+            width: 150px;
+        }
+
+        &__inner {
+            padding-bottom: 180px;
+            margin-bottom: 100px;
+        }
+    }
+
+    @include media("sm") {
+        &__bg-wrapper {
+            filter: drop-shadow(0px 0px 30px rgba(161, 81, 120, 0.5));
+        }
+
+        &__inner {
+            padding-top: 110px;
+            margin-top: 50px;
+        }
+
+        &__cloud {
+            top: calc(100% + 160px);
+            right: 20px;
+        }
+
+        &__heart {
+            right: 50px;
+            bottom: -70px;
+        }
+
+        &__sun-image {
+            left: 20px;
+        }
+
+        &__description {
+            text-align: center;
+            font-weight: 500;
+        }
+
+        &__horse-front {
+            width: 125px;
+            right: 30px;
+            top: -75px;
+        }
+
+        &__title {
+            margin-bottom: 35px;
+        }
+
+        &__player-wrapper {
+            margin-bottom: 16px;
+        }
+    }
+
+    @include media(500) {
+        &__inner {
+            padding-bottom: 104px;
+            margin-bottom: 78px;
+        }
+
+        &__sun-image {
+            width: 70px;
+            bottom: -20px;
+        }
+
+        &__heart {
+            width: 36px;
+            right: 40px;
+            bottom: -40px;
+        }
+
+        &__cloud {
+            width: 100px;
+            top: calc(100% + 100px);
+        }
+
+        &__horse-front {
+            right: 0;
+        }
+    }
+}

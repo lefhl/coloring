@@ -1,0 +1,21 @@
+section.contacts#contacts
+  .wrapper
+    .contacts__content
+      h2.contacts__title Контакты
+      p.contacts__text Задать вопрос или прислать фото раскрашенной раскраски можно на почту hello@veganrussian.ru
+      a(href="mailto:hello@veganrussian.ru").button.button--white.contacts__button Написать
+
+      .contacts__right-images
+        span(aria-label="Радуга с облаками на концах" data-class="dash").observed.contacts__rainbow
+          include ./../../../images/clouds-and-rainbow.svg
+        span(aria-hidden="true" data-class="dash" style="--delay: 1.3s").observed.contacts__diamond
+          include ./../../../images/diamond.svg
+        span(aria-hidden="true" data-class="dash" style="--delay: 1.3s").observed.contacts__right-highlight
+          include ./../../../images/contacts-highlight.svg
+      .contacts__left-images
+        span(data-class="dash" aria-label="Открытая книга").observed.contacts__book
+          include ./../../../images/contacts-book.svg
+        span(data-class="dash" aria-hidden="true" style="--delay: 1.3s").observed.contacts__heart
+          include ./../../../images/contacts-heart.svg
+        span.contacts__rhomb.observed(data-class="dash" aria-hidden="true" style="--delay: 1.3s")
+          include ./../../../images/empty-rhomb.svg

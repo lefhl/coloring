@@ -1,0 +1,232 @@
+.promo {
+    position: relative;
+    margin-bottom: 100px;
+
+    &__bg-wrap {
+        position: absolute;
+        @include inset;
+        z-index: -1;
+        filter: drop-shadow(0px 15px 40px rgba(45, 87, 102, 0.2));
+        transition: opacity 0.5s;
+        opacity: 1;
+
+        &.observed {
+            opacity: 0;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        @include inset;
+        background-color: var(--light-blue-color);
+        clip-path: url(#promo-bg-clip-path);
+    }
+
+    &__inner {
+        padding-top: calc(
+            var(--header-shift) + var(--header-height) +
+                var(--promo-content-shift)
+        );
+        padding-bottom: 275px;
+    }
+
+    &__back-in-left {
+        visibility: hidden;
+        @extend .back-in-left;
+    }
+
+    &__button {
+        max-width: 408px;
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    &__link {
+        display: block;
+        color: var(--gray-color);
+        text-decoration: underline;
+        font-size: var(--large-text-fs);
+    }
+
+    &__title {
+        margin-bottom: 48px;
+    }
+
+    &__text {
+        margin-bottom: 72px;
+    }
+
+    &__content {
+        display: flex;
+        gap: 32px;
+        position: relative;
+    }
+
+    &__lamb-wrapper {
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    &__lamb {
+        width: 100%;
+        visibility: hidden;
+    }
+
+    &__heart-1 {
+        position: absolute;
+        left: 0;
+        top: -43px;
+        transform: translateY(-100%);
+        width: max-content;
+        height: max-content;
+    }
+
+    &__heart-2 {
+        position: absolute;
+        right: 0;
+        top: 20px;
+    }
+
+    &__spiral {
+        position: absolute;
+        right: 0;
+        bottom: -10px;
+        left: 30px;
+        margin: auto;
+        width: max-content;
+        height: max-content;
+    }
+
+    @include media(1400) {
+        &__content {
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+        }
+
+        &__title {
+            margin-bottom: 30px;
+        }
+
+        &__text {
+            margin-bottom: 42px;
+        }
+    }
+
+    @include media(1200) {
+        &__heart-1 {
+            display: none;
+        }
+
+        &__heart-2 {
+            top: -50px;
+            left: -40px;
+        }
+
+        &__spiral {
+            bottom: -100px;
+            right: -110px;
+        }
+    }
+
+    @include media(1024) {
+    }
+
+    @include media("md") {
+        min-height: auto;
+
+        &__bg {
+            clip-path: url(#promo-bg-mobile-clip-path);
+        }
+
+        &__inner {
+            padding-bottom: 0;
+        }
+
+        &__content {
+            grid-template-columns: 1fr;
+        }
+
+        &__lamb-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__lamb {
+            max-width: 350px;
+        }
+
+        &__heart-1 {
+            path {
+                stroke-width: 2px;
+            }
+        }
+
+        &__heart-2 {
+            width: 50px;
+            right: 25%;
+            left: auto;
+            top: -150px;
+            transform: scaleX(-1);
+
+            path {
+                stroke-width: 2px;
+            }
+        }
+
+        &__spiral {
+            left: 10px;
+            right: auto;
+            top: 120px;
+
+            svg {
+                width: 68px;
+            }
+
+            path {
+                stroke-width: 2px;
+            }
+        }
+    }
+
+    @include media("sm") {
+        &__bg-wrap {
+            filter: drop-shadow(2px 6px 20px rgba(45, 87, 102, 0.2));
+        }
+
+        &__heart-1 {
+            display: block;
+            width: 30px;
+            top: -20px;
+        }
+
+        &__heart-2 {
+            width: 40px;
+            top: -120px;
+        }
+
+        &__button {
+            width: auto;
+            padding-inline: 31.5px;
+        }
+
+        &__lamb {
+            width: clamp(250px, 60vw, 350px);
+        }
+    }
+
+    @include media(500) {
+        &__heart-2 {
+            right: 20px;
+        }
+
+        &__spiral {
+            top: 160px;
+            svg {
+                width: 40px;
+            }
+        }
+    }
+}
+
+@keyframes clip-bg {
+}

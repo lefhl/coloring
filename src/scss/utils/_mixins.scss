@@ -1,0 +1,39 @@
+$sizes: (
+    "lg": 1239.98px,
+    "md": 959.98px,
+    "sm": 767px,
+    "xs": 599px,
+    "xxs": 399px,
+);
+
+@mixin media($size, $range: "max") {
+    @if map-has-key($sizes, $size) {
+        $size-value: map-get($sizes, $size);
+        @media only screen and (#{$range}-width: $size-value) {
+            @content;
+        }
+    } @else {
+        @media only screen and (#{$range}-width: #{$size}px) {
+            @content;
+        }
+    }
+}
+
+@mixin two-parts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@mixin inset($gap: 0px) {
+    right: $gap;
+    left: $gap;
+    bottom: $gap;
+    top: $gap;
+}
+
+@mixin circle($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+}

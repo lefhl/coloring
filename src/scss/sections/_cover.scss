@@ -1,0 +1,199 @@
+.cover {
+    --page-shift-x: 207px;
+    --angle: 13deg;
+    --filled-rhomb-y-shift: -100px;
+    --filled-rhomb-x-shift: 160px;
+    --empty-rhomb-y-shift: calc(var(--filled-rhomb-y-shift) - 60px);
+    --empty-rhomb-x-shift: calc(var(--filled-rhomb-x-shift) - 100px);
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    &__book-item {
+        position: relative;
+    }
+
+    &__image-wrapper {
+        position: relative;
+
+        &:nth-of-type(2) {
+            z-index: 10;
+        }
+    }
+
+    &__page {
+        animation: appear-top 1.5s ease forwards;
+
+        &--left img {
+            animation: appear-left 1.5s ease forwards;
+        }
+
+        &--right img {
+            animation: appear-right 1.5s ease forwards;
+        }
+    }
+
+    &__corner-highlight {
+        position: absolute;
+        left: -50px;
+        top: -50px;
+    }
+
+    &__filled-rhomb {
+        position: absolute;
+        right: var(--filled-rhomb-x-shift);
+        top: var(--filled-rhomb-y-shift);
+        width: max-content;
+    }
+
+    &__empty-rhomb {
+        position: absolute;
+        right: var(--empty-rhomb-x-shift);
+        top: var(--empty-rhomb-y-shift);
+    }
+
+    &__highlighted-rhomb {
+        position: absolute;
+        bottom: -50px;
+        left: 25px;
+    }
+
+    &__pencil {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__btn-block {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    &__btn {
+        max-width: 304px;
+        width: 100%;
+    }
+
+    @include media(1400) {
+        --page-shift-x: 15vw;
+    }
+
+    @include media("lg") {
+        --filled-rhomb-y-shift: -160px;
+        --filled-rhomb-x-shift: 100px;
+    }
+
+    @include media("md") {
+        --angle: 0deg;
+
+        &__wrapper {
+            align-items: center;
+        }
+
+        &__filled-rhomb svg {
+            width: 37px;
+            height: auto;
+            path[stroke-width] {
+                stroke-width: 2px;
+            }
+        }
+
+        &__book-item {
+            min-width: 160px;
+
+            &:nth-child(2) {
+                min-width: 190px;
+            }
+        }
+
+        &__corner-highlight {
+            left: -28px;
+            top: -36px;
+            svg {
+                height: 51px;
+                width: 51px;
+            }
+
+            path {
+                stroke-width: 2px;
+            }
+        }
+
+        &__pencil {
+            width: 40px;
+            transform: rotate(-12.46deg);
+        }
+    }
+
+    @include media("sm") {
+        --page-shift-x: 95px;
+        --filled-rhomb-y-shift: -100px;
+        --filled-rhomb-x-shift: 120px;
+
+        &__btn {
+            padding-inline: 39.5px;
+            width: auto;
+        }
+
+        &__highlighted-rhomb {
+            left: 0;
+        }
+
+        &__pencil {
+            right: 10px;
+            bottom: -10vw;
+        }
+
+        &__filled-rhomb {
+        }
+    }
+
+    @include media(500) {
+        &__pencil {
+            bottom: -150px;
+        }
+    }
+}
+
+@keyframes appear-left {
+    from {
+        opacity: 0;
+        transform: rotate(-45deg) translate(-40px, -70%);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(calc(var(--angle) * -1))
+            translate(var(--page-shift-x), 0);
+    }
+}
+
+@keyframes appear-right {
+    from {
+        opacity: 0;
+        transform: rotate(45deg) translate(40px, -70%);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(var(--angle))
+            translate(calc(-1 * var(--page-shift-x)), 0);
+    }
+}
+
+@keyframes appear-top {
+    from {
+        opacity: 0;
+        transform: translate(0, -100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

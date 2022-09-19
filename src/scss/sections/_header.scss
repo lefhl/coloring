@@ -1,0 +1,157 @@
+.header {
+    --menu-width: 400px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+
+    &__menu {
+        display: flex;
+        justify-content: flex-end;
+        gap: 70px;
+        align-items: center;
+    }
+
+    &__links {
+        display: flex;
+        gap: 41px;
+    }
+
+    &__wrapper {
+        padding-top: var(--header-shift);
+    }
+
+    &__button {
+        height: var(--header-height);
+        padding: 16.5px 32px;
+        position: relative;
+    }
+
+    &__btn-bg {
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            width: Max(
+                calc(
+                    (100% - var(--wrapper-width) - var(--wrapper-gap)) / 2 +
+                        300px
+                ),
+                572px
+            );
+
+            max-height: 299px;
+        }
+    }
+
+    @include media(1750, "min") {
+        &__btn-bg {
+            right: -110px;
+            img {
+                width: auto;
+                filter: drop-shadow(2px 6px 20px rgba(112, 18, 135, 0.25));
+            }
+        }
+
+        &__wrapper {
+            position: relative;
+        }
+
+        &__menu {
+            gap: 170px;
+        }
+    }
+
+    @include media(1750) {
+        &__btn-bg img {
+            height: 220px;
+            width: 500px;
+        }
+        &__menu {
+            gap: 180px;
+        }
+    }
+
+    @include media(1600) {
+        &__btn-bg img {
+            width: auto;
+        }
+        &__menu {
+            gap: 80px;
+        }
+    }
+
+    @include media(1201, "min") {
+        &__burger,
+        &__close-btn {
+            display: none;
+        }
+    }
+
+    @include media(1200) {
+        &__btn-bg {
+            overflow: hidden;
+            img {
+                transform: translateX(120px);
+                height: 170px;
+            }
+        }
+
+        &__close-btn {
+            position: absolute;
+            right: 20px;
+            top: 32px;
+        }
+
+        &__wrapper {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &__menu {
+            visibility: hidden;
+            transform: translateX(100%);
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: var(--menu-width);
+            padding-top: 32px;
+            padding-inline: 20px;
+            background-color: var(--purple-color);
+            flex-direction: column;
+            gap: 28px;
+            align-items: flex-end;
+            justify-content: center;
+            transition: transform 0.3s ease, opacity 0.45s ease;
+            opacity: 0;
+            .menu-link {
+                color: #fff;
+            }
+
+            &.active {
+                visibility: visible;
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        &__links {
+            display: contents;
+        }
+    }
+
+    @include media("sm") {
+        --menu-width: 267px;
+        &__btn-bg img {
+            width: 100%;
+            transform: none;
+            height: 130px;
+        }
+    }
+}

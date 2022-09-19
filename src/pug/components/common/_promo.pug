@@ -1,0 +1,31 @@
+<svg class="hidden">
+  <clipPath id="promo-bg-clip-path" clipPathUnits="objectBoundingBox"><path d="M-0.001,0 V1 C-0.001,1,0.082,0.902,0.156,0.898 C0.219,0.895,0.295,0.966,0.341,0.939 C0.429,0.887,0.423,0.819,0.479,0.764 C0.549,0.695,0.6,0.762,0.669,0.692 C0.723,0.636,0.729,0.547,0.786,0.498 C0.829,0.462,0.881,0.463,0.924,0.43 C1,0.362,0.999,0.125,0.999,0.125 V0 H-0.001"></path></clipPath>
+</svg>
+<svg class="hidden">
+  <clipPath id="promo-bg-mobile-clip-path" clipPathUnits="objectBoundingBox"><path d="M0,0 V0.873 V1 C0,1,0.053,0.937,0.184,0.922 C0.253,0.913,0.365,0.938,0.44,0.922 C0.555,0.896,0.564,0.854,0.655,0.828 C0.75,0.801,0.832,0.838,0.908,0.82 C1,0.799,1,0.766,1,0.766 V0 H0"></path></clipPath>
+</svg>
+
+
+section.promo
+
+  span.promo__bg-wrap(aria-hidden="true").observed
+    span.promo__bg
+
+  .wrapper.promo__inner
+    .promo__content
+      span.promo__heart-1.observed(aria-hidden="true" data-class="dash" style="--delay: 1.75s; --speed: 9.5s")
+        include ./../../../images/promo-heart-1.svg
+      span.promo__spiral.observed(aria-hidden="true" data-class="dash" style="--delay: 0.35s")
+        include ./../../../images/promo-spiral.svg
+      div
+        h1.promo__title.observed(data-class="promo__back-in-left") Бесплатная раскраска
+          br
+          | с&nbsp;животными для детей
+        p.promo__text.observed(data-class="promo__back-in-left" style="--delay: 0.35s") Мы создали эту раскраску, чтобы транслировать важные ценности детям. Среди них уважение к животным и этичное к ним отношение. Мы надеемся, что Добрая раскраска поможет вырастить поколение, неравнодушноек животным. Раскраска распространяется бесплатно – мы хотим, чтобы она была доступна всем.
+        a(data-class="promo__back-in-left" style="--delay: 0.45s" href="https://drive.google.com/drive/folders/1EFpLTVzJ3JHAol9wQo875hvZC1mW0D_g" target="_blank").button.promo__button.observed Скачать PDF
+        a(href="https://drive.google.com/drive/folders/1zszBJ625o9Mc-Y1WSHTyuCJ38sSc-n5A" target="_blank" data-class="promo__back-in-left" style="--delay: 0.55s").promo__link.observed Смотреть страницы отдельно
+      .promo__lamb-wrapper
+        img(src="./images/lamb.webp", alt="ягнёнок" data-class="fade-in-up" style="--delay: 0.5s").promo__lamb.observed
+        span.promo__heart-2.observed(aria-hidden="true" style="--delay: 2.3s" data-class="dash")
+          include ./../../../images/promo-heart-2.svg
+

@@ -1,0 +1,19 @@
+header.header
+  .wrapper.header__wrapper
+    nav.header__menu#mobile-menu(aria-labelledby="Навигационное меню")
+      button(type="button" aria-hidden="true" aria-label="Закрыть мобильное меню").header__close-btn#menu-closer
+        img(src="./images/cross.svg", alt="Крестик")
+      .header__links
+        a(href="#instructions").link.menu-link Видео-инструкция
+        a(href="#materials").link.menu-link Чем раскрашивать
+        a(href="#contacts").link.menu-link Контакты
+      a(href="https://drive.google.com/drive/folders/1EFpLTVzJ3JHAol9wQo875hvZC1mW0D_g" target="_blank").button.button--white.header__button Скачать PDF
+    picture.header__btn-bg(aria-hidden="true")
+      source(srcset='./images/menu-bg-extralarge.svg' media='(min-width: 1750px)')
+      source(srcset='./images/menu-bg-1.svg' media='(min-width: 767px)')
+      img(src="./images/menu-bg.svg", alt="")
+    button(type="button" aria-label="Открыть мобильное меню" aria-controls="mobile-menu").burger.header__burger#burger-trigger
+      img(src="./images/burger-lines.svg", aria-hidden="true" alt="")
+
+
+

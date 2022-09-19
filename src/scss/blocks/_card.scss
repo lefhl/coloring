@@ -1,0 +1,76 @@
+.card {
+    --circle-size: 120px;
+
+    border: 3px solid var(--purple-color);
+    padding: 28px 32px;
+    border-radius: 10px;
+    position: relative;
+    width: max-content;
+    text-align: center;
+    background-color: #fff;
+    z-index: 1;
+    transition: opacity 0.3s 0.5s;
+
+    &.observed {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__icon {
+        @include circle(var(--circle-size));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        z-index: 1;
+        background-color: var(--purple-color);
+    }
+
+    &__author {
+        margin-bottom: 16px;
+    }
+
+    &__name {
+        margin-bottom: 4px;
+    }
+
+    &__role {
+        color: var(--gray-color);
+        font-weight: 500;
+        font-size: var(--small-text-fs);
+    }
+
+    @include media("lg") {
+        --circle-size: 56px;
+        padding: 12px 15px;
+
+        &__icon {
+            top: -15px;
+            right: -15px;
+            img[src*="bulb"] {
+                width: 20px;
+            }
+            img[src*="palette"],
+            img[src*="crown"],
+            img[src*="scroll"] {
+                width: 32px;
+            }
+            img[src*="book"] {
+                width: 42px;
+            }
+        }
+    }
+
+    @include media("sm") {
+        border-width: 1px;
+        &__icon {
+            top: -15px;
+            right: -10px;
+        }
+        &__author {
+            width: 128px;
+        }
+    }
+}
