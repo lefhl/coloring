@@ -1,3 +1,7 @@
+<svg class="hidden">
+  <clipPath id="header-clip-path" clipPathUnits="objectBoundingBox"><path d="M1,0 H0.149 H0 V0.369 C0,0.369,0.077,0.512,0.138,0.538 C0.198,0.565,0.3,0.474,0.343,0.538 C0.382,0.597,0.434,0.738,0.479,0.773 C0.547,0.825,0.578,0.715,0.65,0.773 C0.693,0.808,0.72,0.957,0.774,0.936 C0.828,0.915,0.834,0.885,0.899,0.858 C0.964,0.831,1,1,1,1 V0"></path></clipPath>
+</svg>
+
 header.header
   .wrapper.header__wrapper
     nav.header__menu#mobile-menu(aria-labelledby="Навигационное меню")
@@ -12,6 +16,8 @@ header.header
       source(srcset='./images/menu-bg-extralarge.svg' media='(min-width: 1750px)')
       source(srcset='./images/menu-bg-1.svg' media='(min-width: 767px)')
       img(src="./images/menu-bg.svg", alt="")
+    span.header__bg
+      span.header__bg-clipper
     button(type="button" aria-label="Открыть мобильное меню" aria-controls="mobile-menu").burger.header__burger#burger-trigger
       img(src="./images/burger-lines.svg", aria-hidden="true" alt="")
 
