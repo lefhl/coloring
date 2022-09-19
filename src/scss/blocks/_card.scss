@@ -43,6 +43,13 @@
     }
 
     @include media("lg") {
+        &__icon {
+            top: -42px;
+            right: -12px;
+        }
+    }
+
+    @include media("md") {
         --circle-size: 56px;
         padding: 12px 15px;
 

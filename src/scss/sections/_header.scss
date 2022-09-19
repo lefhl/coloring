@@ -86,14 +86,25 @@
         }
     }
 
-    @include media(1201, "min") {
+    @include media("md", "min") {
         &__burger,
         &__close-btn {
             display: none;
         }
     }
 
-    @include media(1200) {
+    @include media("lg") {
+        &__menu {
+            gap: 140px;
+        }
+
+        &__links {
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+    }
+
+    @include media("md") {
         &__btn-bg {
             overflow: hidden;
             img {
@@ -101,7 +112,6 @@
                 height: 170px;
             }
         }
-
         &__close-btn {
             position: absolute;
             right: 20px;
@@ -112,7 +122,6 @@
             display: flex;
             justify-content: flex-end;
         }
-
         &__menu {
             visibility: hidden;
             transform: translateX(100%);
@@ -146,24 +155,16 @@
         }
     }
 
-    @include media("sm", "min") {
-    }
     @include media("sm") {
         --menu-width: 267px;
         &__btn-bg {
             display: none;
         }
 
-        &__btn-bg img {
-            width: 100%;
-            transform: none;
-            height: 130px;
-        }
-
         &__bg {
             position: absolute;
             width: 100%;
-            height: 130px;
+            height: 170px;
             z-index: -1;
             top: 0;
             right: 0;
@@ -174,6 +175,7 @@
         &__bg-clipper {
             position: absolute;
             @include inset;
+            height: 130px;
             background-color: var(--purple-color);
             clip-path: url(#header-clip-path);
         }

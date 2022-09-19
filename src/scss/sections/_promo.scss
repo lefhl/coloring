@@ -15,6 +15,10 @@
         }
     }
 
+    &__text-content {
+        visibility: hidden;
+    }
+
     &__bg {
         position: absolute;
         @include inset;
@@ -50,6 +54,7 @@
 
     &__title {
         margin-bottom: 48px;
+        white-space: nowrap;
     }
 
     &__text {
@@ -111,27 +116,34 @@
         }
     }
 
-    @include media(1200) {
-        &__heart-1 {
-            display: none;
+    @include media("lg") {
+        &__lamb {
+            max-width: 379px;
         }
 
         &__heart-2 {
-            top: -50px;
-            left: -40px;
+            position: absolute;
+            right: -30px;
+            top: 50px;
+        }
+
+        &__button {
+            max-width: 240px;
+            margin-bottom: 20px;
         }
 
         &__spiral {
-            bottom: -100px;
-            right: -110px;
+            bottom: -200px;
+            right: 0px;
         }
     }
 
     @include media(1024) {
-    }
-
-    @include media("md") {
         min-height: auto;
+
+        &__heart-1 {
+            display: none;
+        }
 
         &__bg {
             clip-path: url(#promo-bg-mobile-clip-path);
@@ -176,6 +188,7 @@
             left: 10px;
             right: auto;
             top: 120px;
+            bottom: -60px;
 
             svg {
                 width: 68px;

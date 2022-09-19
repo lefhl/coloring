@@ -13,6 +13,7 @@
     &__bg-wrapper {
         position: absolute;
         @include inset;
+        right: -31px;
         filter: drop-shadow(0px 0px 40px rgba(162, 81, 120, 0.5));
     }
 
@@ -121,6 +122,63 @@
     }
 
     @include media(1500) {
+        &__description,
+        &__player-wrapper {
+            max-width: 790px;
+        }
+    }
+
+    @include media("lg") {
+        &__bg {
+            clip-path: url(#video-clip-path-mobile);
+        }
+
+        &__inner {
+            padding-top: 220px;
+            padding-bottom: 290px;
+            overflow: visible;
+            margin-bottom: 200px;
+        }
+
+        &__description,
+        &__player-wrapper {
+            max-width: 790px;
+        }
+
+        &__horse-front {
+            right: -180px;
+            top: -180px;
+
+            svg:first-child {
+                max-width: 370px;
+            }
+        }
+
+        &__horse-back {
+            svg:first-child {
+                max-width: 238px;
+            }
+        }
+    }
+
+    @include media("md") {
+        &__sun-image {
+            width: 90px;
+        }
+
+        &__heart {
+            width: 50px;
+        }
+
+        &__cloud {
+            width: 150px;
+        }
+
+        &__inner {
+            padding-bottom: 180px;
+            margin-bottom: 100px;
+        }
+
         &__horse-back {
             display: none;
         }
@@ -145,38 +203,6 @@
         &__heart {
             right: 10px;
             bottom: -90px;
-        }
-    }
-
-    @include media("lg") {
-        &__bg {
-            clip-path: url(#video-clip-path-mobile);
-        }
-
-        &__inner {
-            padding-top: 220px;
-            padding-bottom: 290px;
-            overflow: visible;
-            margin-bottom: 200px;
-        }
-    }
-
-    @include media("md") {
-        &__sun-image {
-            width: 90px;
-        }
-
-        &__heart {
-            width: 50px;
-        }
-
-        &__cloud {
-            width: 150px;
-        }
-
-        &__inner {
-            padding-bottom: 180px;
-            margin-bottom: 100px;
         }
     }
 

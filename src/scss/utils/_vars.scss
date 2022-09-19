@@ -27,7 +27,8 @@
 
     @include media(1750) {
         --header-shift: 50px;
-        --promo-content-shift: 75px;
+        // --promo-content-shift: 75px;
+        --promo-content-shift: 155px;
     }
 
     @include media(1600) {
@@ -38,15 +39,21 @@
         --small-text-fs: 16px;
     }
 
-    @include media(1200) {
-        --header-shift: 32px;
+    @include media("lg") {
         --header-height: 60px;
-        --promo-content-shift: 0px;
 
-        --h1-fs: 44px;
-        --h2-fs: 36px;
+        --h1-fs: 48px;
+        --h2-fs: 32px;
+
+        --large-text-fs: 20px;
+        --text-fs: 18px;
 
         --wrapper-gap: 40px;
+    }
+
+    @include media("md") {
+        --header-shift: 32px;
+        --promo-content-shift: 0px;
     }
 
     @include media("sm") {
@@ -58,6 +65,5 @@
 
         --promo-content-shift: 60px;
         --wrapper-gap: 20px;
-        --header-shift: 32px;
     }
 }

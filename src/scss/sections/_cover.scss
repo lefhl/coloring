@@ -86,10 +86,26 @@
     @include media("lg") {
         --filled-rhomb-y-shift: -160px;
         --filled-rhomb-x-shift: 100px;
+        --page-shift-x: 210px;
+
+        &__btn {
+            padding-inline: 39.5px;
+            width: auto;
+        }
+
+        &__image-wrapper {
+            max-width: 392px;
+
+            &:first-of-type,
+            &:last-of-type {
+                max-width: 293px;
+            }
+        }
     }
 
     @include media("md") {
         --angle: 0deg;
+        --page-shift-x: 95px;
 
         &__wrapper {
             align-items: center;

@@ -48,7 +48,11 @@
         }
     }
 
-    @include media("sm") {
+    @include media("lg") {
+        height: 60px;
+    }
+
+    @include media("md") {
         height: 48px;
         border-width: 1px;
     }

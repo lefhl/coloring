@@ -22,6 +22,17 @@
         left: 0;
     }
 
+    @include media("lg", "min") {
+        &__content {
+            gap: 82px 96px;
+        }
+    }
+    @include media("lg") {
+        &__title {
+            margin-bottom: 75px;
+        }
+    }
+
     @include media(1024, "min") {
         .swiper {
             overflow: visible;
@@ -32,13 +43,12 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 82px 96px;
+            gap: 94px 30px;
         }
     }
 
     @include media(1024) {
-        --slider-top-padding: 20px;
-        --title-bottom-gap: 66px;
+        --slider-top-padding: 76px;
 
         .swiper {
             padding-right: 15px;
@@ -54,6 +64,10 @@
             justify-content: center;
             gap: 4px;
             padding-top: 24px;
+        }
+
+        &__title {
+            margin-bottom: 0;
         }
 
         .swiper-pagination-bullet {
@@ -75,7 +89,6 @@
     }
 
     @include media("sm") {
-        --title-bottom-gap: 36px;
-        --slider-top-padding: 16px;
+        --slider-top-padding: 36px;
     }
 }

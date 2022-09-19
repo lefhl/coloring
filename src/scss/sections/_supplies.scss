@@ -89,10 +89,6 @@
     @include media(1400) {
         --bottom-gap: 60px;
 
-        &__drawing-pencils {
-            display: none;
-        }
-
         &__drawing-pencil-mobile {
             position: absolute;
             right: 40px;
@@ -100,9 +96,32 @@
         }
     }
 
+    @media (min-width: 1024px) and (max-width: 1240px) {
+        --bottom-gap: 306px;
+        &__drawing-pencils {
+            right: -80px;
+            bottom: -180px;
+        }
+    }
+
+    @include media("lg") {
+        &__button {
+            width: auto;
+            padding-inline: 36px;
+        }
+
+        &__image {
+            max-width: 398px;
+        }
+    }
+
     @include media(1024) {
         margin-top: 14px;
         padding-top: 240px;
+
+        &__drawing-pencils {
+            display: none;
+        }
 
         &__title {
             align-self: flex-start;
