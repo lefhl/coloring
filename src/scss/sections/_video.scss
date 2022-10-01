@@ -63,7 +63,7 @@
     &__horse-back {
         position: absolute;
         top: 50%;
-        left: 40px;
+        left: 45px;
         transform: translate(-100%, -50%);
     }
 
@@ -95,7 +95,7 @@
         top: 120%;
 
         path:first-child {
-            transition: opacity ease 0.43s 4s;
+            transition: opacity ease 0.43s 2.2s;
         }
 
         &.observed {
